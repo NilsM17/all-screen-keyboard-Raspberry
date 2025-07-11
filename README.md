@@ -7,7 +7,7 @@ Hardware wise I used:
 * Orange Pi 5 Ultra (any Orange Pi 5 could be a drop in replacement, well, you may have to change which pins you use)
 * PCB found in this project's PCB folder
 * Top Shell and keys printed in transparent resin
-* Bottom shell printed in regular PLA (available as a 
+* Bottom shell printed in regular PLA (available as a single piece or multiple parts for printing at home)
 
 Currently start up requires three steps, starting the python program, setting the bluetooth advertisement appearance, and then running the main keyboard program. 
 
