@@ -1,2 +1,54 @@
-# all-screen-keyboard
-The first open source all-screen keyboard
+# The all-screen-keyboard
+The first open source all-screen keyboard. This repository contains all the digital files used to produce the all-screen keyboard created by Inkbox Software in this video: 
+
+## How can I make my own?
+Well, you probably don't want to. As of today (2025/7/11) the keys are much too tall, and so not all the keys are able to be viewed at once. I will make a 2.0 revision sometime later, but feel free to do it yourself if you'd like. 
+Hardware wise I used:
+* Orange Pi 5 Ultra (any Orange Pi 5 could be a drop in replacement, well, you may have to change which pins you use)
+* PCB found in this project's PCB folder
+* Top Shell and keys printed in transparent resin
+* Bottom shell printed in regular PLA (available as a 
+
+Currently start up requires three steps, starting the python program, setting the bluetooth advertisement appearance, and then running the main keyboard program. 
+
+### To enable SPI on the Orange Pi 5:
+
+open **/boot/extlinux/extlinux.conf**
+
+Add the following text
+```
+FDTOVERLAYS /dtbs/rockchip/overlay/rk3588-spi0-m2-cs0-cs1-spidev.dtbo
+/dtbs/rockchip/overlay/rk3588-spi1-m1-cs0-spidev.dtbo
+/dtbs/rockchip/overlay/rk3588-spi4-m2-cs0-spidev.dtbo
+```
+
+### Running the bluetooth python program:
+Ensure you have the proper dependencies installed
+```
+cd keyboard
+make py
+```
+
+### Starting bluetooth:
+Setting the appearance to 961 will have the Pi show up as a keyboard. 
+```
+bluetoothctl 
+discoverable on
+pairable on
+advertise on
+menu advertise
+appearance 961
+```
+
+### Starting the main keyboard program
+Navigate to the directory
+To build the program for the first time run
+```
+make build
+```
+Then run with
+```
+make run
+```
+
+
