@@ -1,3 +1,6 @@
+# Working on Raspberry PI support
+Since InkboxSoftware only worked with the Orange PI 5 and that one is way to expensive for my liking i will be working with an Raspberry PI 3 Model B as a replacement because thats what i have on hand (might upgrade to a PI 5 at some point)
+
 # The open source all-screen keyboard
 The first open source all-screen keyboard. This repository contains all the digital files used to produce the all-screen keyboard created by Inkbox Software in this video: 
 
